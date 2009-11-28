@@ -1,0 +1,42 @@
+// CUP specification for a simple expression evaluator (no actions)
+
+package org.cesar.flip.flipg.model.expressions.parse;
+
+import java_cup.runtime.*;
+import org.cesar.flip.flipg.model.IExpression;
+import org.cesar.flip.flipg.model.IFeature;
+import org.cesar.flip.flipg.model.expressions.*;
+import java.util.List;
+
+action code {:
+:};
+
+parser code {:
+	public NodeFactory nf;
+	
+	public parser(java_cup.runtime.Scanner s, NodeFactory nf) {
+		this(s);
+		this.nf = nf;
+	}
+:};
+/* Terminals (tokens returned by the scanner). */
+terminal            LPAREN, RPAREN, OR, AND, NOT;
+terminal String 	FEATURE;
+
+/* Non terminals */
+non terminal            feature_expression;
+
+precedence left AND, OR;
+
+/* The grammar */
+feature_expression ::= LPAREN feature_expression:e RPAREN
+						{: RESULT = e; :}
+					| feature_expression:e1 AND feature_expression:e2
+						{: RESULT = parser.nf.createAndExpression((IExpression)e1, (IExpression)e2); :}
+					| feature_expression:e1 OR feature_expression:e2
+						{: RESULT = parser.nf.createOrExpression((IExpression)e1, (IExpression)e2); :}
+					| NOT LPAREN feature_expression:e1 RPAREN
+						{: RESULT = parser.nf.createNotExpression((IExpression)e1); :}
+					| FEATURE:f
+						{: RESULT = parser.nf.createFeature(f); :}
+					;
