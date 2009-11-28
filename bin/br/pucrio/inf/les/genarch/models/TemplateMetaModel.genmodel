@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/br.pucrio.inf.les.genarch/src-br.pucrio.inf.les.genarch"
+    editDirectory="/br.pucrio.inf.les.genarch/src-br.pucrio.inf.les.genarch" editorDirectory="/br.pucrio.inf.les.genarch/src-br.pucrio.inf.les.genarch"
+    modelPluginID="br.pucrio.inf.les.genarch" modelName="TemplateMetaModel" editPluginClass="br.pucrio.inf.les.genarch.models.template.provider.TemplateMetaModelEditPlugin"
+    editorPluginClass="br.pucrio.inf.les.genarch.models.template.presentation.TemplateMetaModelEditorPlugin"
+    testsDirectory="/br.pucrio.inf.les.genarch/src-br.pucrio.inf.les.genarch" testSuiteClass="br.pucrio.inf.les.genarch.models.template.tests.TemplateMetaModelAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false">
+  <foreignModel>TemplateMetaModel.ecore</foreignModel>
+  <genPackages prefix="Instance" basePackage="br.pucrio.inf.les.genarch.models" disposableProviderFactory="true"
+      ecorePackage="TemplateMetaModel.ecore#/">
+    <genClasses ecoreClass="TemplateMetaModel.ecore#//Instance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//Instance/architecture"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//Instance/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//Instance/architectureElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//Instance/featureElements"/>
+    </genClasses>
+    <genClasses ecoreClass="TemplateMetaModel.ecore#//ArchitectureInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//ArchitectureInstance/classes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//ArchitectureInstance/aspects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//ArchitectureInstance/files"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//ArchitectureInstance/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//ArchitectureInstance/folders"/>
+    </genClasses>
+    <genClasses ecoreClass="TemplateMetaModel.ecore#//ArchitectureEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TemplateMetaModel.ecore#//ArchitectureEntity/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TemplateMetaModel.ecore#//ArchitectureEntity/path"/>
+    </genClasses>
+    <genClasses ecoreClass="TemplateMetaModel.ecore#//ArchitectureComponent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//ArchitectureComponent/classes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//ArchitectureComponent/aspects"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//ArchitectureComponent/files"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//ArchitectureComponent/subComponents"/>
+    </genClasses>
+    <genClasses ecoreClass="TemplateMetaModel.ecore#//ArchitectureClass"/>
+    <genClasses ecoreClass="TemplateMetaModel.ecore#//ArchitectureAspect"/>
+    <genClasses ecoreClass="TemplateMetaModel.ecore#//ArchitectureFile"/>
+    <genClasses ecoreClass="TemplateMetaModel.ecore#//ArchitectureFolder">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//ArchitectureFolder/subFolders"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//ArchitectureFolder/files"/>
+    </genClasses>
+    <genClasses ecoreClass="TemplateMetaModel.ecore#//FeatureInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//FeatureInstance/features"/>
+    </genClasses>
+    <genClasses ecoreClass="TemplateMetaModel.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TemplateMetaModel.ecore#//Feature/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TemplateMetaModel.ecore#//Feature/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TemplateMetaModel.ecore#//Feature/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TemplateMetaModel.ecore#//Feature/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TemplateMetaModel.ecore#//Feature/isSelected"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TemplateMetaModel.ecore#//Feature/features"/>
+    </genClasses>
+    <genClasses ecoreClass="TemplateMetaModel.ecore#//ArchitectureElements">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TemplateMetaModel.ecore#//ArchitectureElements/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="TemplateMetaModel.ecore#//FeatureElements">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TemplateMetaModel.ecore#//FeatureElements/features"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+  <extension
+        id="genarchnature"
+        name="Genarch Nature"
+        point="org.eclipse.core.resources.natures">
+     <runtime>
+        <run class="br.pucrio.inf.les.genarch.GenarchProjectNature"/>
+     </runtime>
+  </extension>
+  <extension
+        point="org.eclipse.ui.ide.projectNatureImages">
+     <image
+           icon="icons/full/newajprj_wiz.gif"
+           id="br.pucrio.inf.les.genarch.projectNatureImage"
+           natureId="br.pucrio.inf.les.genarch.genarchnature"/>
+  </extension>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+          class="br.pucrio.inf.les.genarch.models.architecture.ArchitecturePackage"
+          genModel="br.pucrio.inf.les.genarch.models.ArchitectureMetaModel.genmodel"
+          uri="http:///ArchitectureMetaModel.ecore"/>
+  </extension>
+ <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+          class="br.pucrio.inf.les.genarch.models.configuration.ConfigurationPackage"
+          genModel="br.pucrio.inf.les.genarch.models.ConfigurationMetaModel.genmodel"
+          uri="http:///ConfigurationMetaModel.ecore"/>
+  </extension>
+ <extension point="org.eclipse.emf.ecore.generated_package">
+ 	<package
+        class="br.pucrio.inf.les.genarch.models.feature.FeaturePackage"
+        genModel="br.pucrio.inf.les.genarch.models.FeatuerMetaModel.genmodel"
+        uri="http:///FeatureMetaModel.ecore"/>
+ </extension>
+<extension point="org.eclipse.emf.ecore.generated_package">
+ 	<package
+        class="br.pucrio.inf.les.genarch.models.instance.InstancePackage"
+        genModel="br.pucrio.inf.les.genarch.models.TemplateMetaModel.genmodel"
+        uri="http:///InstanceMetaModel.ecore"/>
+ </extension>
+<extension
+    point = "org.eclipse.ui.newWizards">
+    <category
+      id = "br.pucrio.inf.les.genarch.GenArchCategory"
+      name="Genarch">
+    </category>
+    <wizard
+          category="br.pucrio.inf.les.genarch.GenArchCategory"
+          class="br.pucrio.inf.les.genarch.ui.wizards.newGenArchJavaAspectJProfile"
+          id="br.pucrio.inf.les.genarch.newGenArchJavaAspectJProfile"
+          name="GenArch Java/AspectJ Profile"/>
+  </extension>
+
+
+  <extension point = "org.eclipse.ui.editors">
+    <editor
+        id = "br.pucrio.inf.les.genarch.models.architecture.presentation.ArchitectureEditorID"
+        name = "%_UI_ArchitectureModelEditor_label"
+        icon = "icons/full/obj16/ArchitectureModelModelFile.gif"
+        extensions = "architecture"
+        class = "br.pucrio.inf.les.genarch.models.architecture.presentation.ArchitectureEditor" 
+        contributorClass="br.pucrio.inf.les.genarch.models.architecture.presentation.ArchitectureActionBarContributor" >
+    </editor>
+    <editor
+          class="br.pucrio.inf.les.genarch.models.configuration.presentation.ConfigurationEditor"
+          contributorClass="br.pucrio.inf.les.genarch.models.configuration.presentation.ConfigurationActionBarContributor"
+          extensions="configuration"
+          icon="icons/full/obj16/ConfigurationModelModelFile.gif"
+          id="br.pucrio.inf.les.genarch.models.configuration.presentation.ConfigurationEditorID"
+          name="%_UI_ConfigurationModelEditor_label"/>
+    <editor
+          class="br.pucrio.inf.les.genarch.ui.editor.GenarchConfigEditor"
+          filenames="genarch.gcf"
+          icon="icons/full/gcf.gif"
+          id="br.pucrio.inf.les.genarch.GenarchConfigEditor"
+          name="Genarch Config Editor"/>    
+  </extension>    
+
+  <extension
+        point="org.eclipse.ui.popupMenus">
+     <objectContribution
+           adaptable="true"
+           id="br.pucrio.inf.les.genarch.projectObjectContribution"
+           objectClass="org.eclipse.core.resources.IProject">
+        <menu
+              id="br.pucrio.inf.les.genarch.menu1"
+              label="Genarch"
+              >
+           <separator name="group1"/>
+        </menu>
+        <visibility>
+           <not>
+              <objectState
+                    name="nature"
+                    value="br.pucrio.inf.les.genarch.genarchnature"/>
+           </not>
+        </visibility>
+        <action
+              class="br.pucrio.inf.les.genarch.ui.actions.ConvertToGenarchProjectAction"
+              id="br.pucrio.inf.les.genarch.ConvertToGenarchProjectAction"
+              label="&amp;Convert to Genarch project"
+              menubarPath="br.pucrio.inf.les.genarch.menu1/group1"/>
+     </objectContribution>
+  </extension>
+  <extension
+        point="org.eclipse.ui.popupMenus">
+     <objectContribution
+           adaptable="true"
+           id="br.pucrio.inf.les.genarch.modelsObjectContribution"
+           objectClass="org.eclipse.core.resources.IProject">
+        <menu
+              id="br.pucrio.inf.les.genarch.menu2"
+              label="Genarch">
+           <separator name="group1"/>
+        </menu>
+        <visibility>
+           <objectState
+                 name="nature"
+                 value="br.pucrio.inf.les.genarch.genarchnature"/>
+        </visibility>
+        <action
+              class="br.pucrio.inf.les.genarch.ui.actions.DerivatieProductAsBuildeFileAction"
+              id="br.pucrio.inf.les.genarch.DerivateNewProductAsBuildersAction"
+              label="Derivate Product As &amp;Build File"
+              menubarPath="br.pucrio.inf.les.genarch.menu2/group1">
+        </action>
+        <action
+              class="br.pucrio.inf.les.genarch.ui.actions.DerivatieProductAsProjectAction"
+              id="br.pucrio.inf.les.genarch.DerivateNewProductAsProjectAction"
+              label="Derivate Product In a &amp;New Project"
+              menubarPath="br.pucrio.inf.les.genarch.menu2/group1">
+        </action>
+        <action
+              class="br.pucrio.inf.les.genarch.ui.actions.CreateModelsAction"
+              id="br.pucrio.inf.les.genarch.CreateModelsAction"
+              label="&amp;Create Models"
+              menubarPath="br.pucrio.inf.les.genarch.menu2/group1"/>
+     </objectContribution>
+  </extension>
+  <extension
+        point="org.eclipse.ui.popupMenus">
+     <objectContribution
+           adaptable="true"
+           id="br.pucrio.inf.les.genarch.modelsObjectContribution"
+           objectClass="org.eclipse.core.resources.IFile">
+        <menu
+              id="br.pucrio.inf.les.genarch.menu3"
+              label="Genarch">
+           <separator
+                 name="group1">
+           </separator>
+        </menu>
+        <action
+              class="br.pucrio.inf.les.genarch.ui.actions.ConvertToTemplateAction"
+              id="br.pucrio.inf.les.genarch.ConvertToTemplateAction"
+              label="&amp;Convert to Template"
+              menubarPath="br.pucrio.inf.les.genarch.menu3/group1">
+        </action>
+     </objectContribution>
+  </extension>
+  <extension point="org.eclipse.ui.popupMenus">
+  	<viewerContribution
+  		targetID="#TextEditorContext"
+  		id="br.pucrio.inf.les.genarch.TextEditorContext">
+  		<action label="Extract To Fragment"
+  				class="br.pucrio.inf.les.genarch.ui.actions.ExtractTextToArchitectureFagment"
+  				menubarPath="additions"
+  				id="br.pucrio.inf.les.genarch.ExtractToFragmentAction">
+  		</action>  				
+  	</viewerContribution>
+  </extension>
+	<extension
+         point="org.eclipse.jdt.core.classpathContainerInitializer">
+          <classpathContainerInitializer                                          
+        id="br.pucrio.inf.les.genarch.GENARCH_CONTAINER"                                                        
+        class="br.pucrio.inf.les.genarch.core.plugin.GenArchJarContainerInitializer"/> 
+   </extension>
+
+	<extension  point="org.eclipse.jdt.core.classpathVariableInitializer">
+   	<classpathVariableInitializer variable="GENARCH_LIB"
+       class="br.pucrio.inf.les.genarch.core.plugin.GenArchJarInitializer"/>
+   </extension>
+   
+       
+   <extension
+         id="renameParticipant"
+         name="renameParticipant"
+         point="org.eclipse.ltk.core.refactoring.renameParticipants">
+       <renameParticipant
+            class="br.pucrio.inf.les.genarch.core.synchronization.refactoring.GenArchElementRenameParticipant"
+            name="renameParticipant"
+            id="GenArchElementRenameParticipantID">
+            <enablement>
+           <with variable="affectedNatures">
+             <iterate operator="or">
+               <equals value="br.pucrio.inf.les.genarch.genarchnature"/>
+             </iterate>
+           </with>
+           <with variable="element">
+   	         <instanceof value="org.eclipse.core.resources.IFile"/>
+           </with>
+         </enablement>
+      </renameParticipant>
+ 	</extension>
+</plugin>
+

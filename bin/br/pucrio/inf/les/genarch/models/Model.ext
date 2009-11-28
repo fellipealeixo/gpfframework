@@ -1,0 +1,19 @@
+import br::pucrio::inf::les::genarch::models::instance;
+
+Feature feature(Object name,Object model) : 
+	JAVA  br.pucrio.inf.les.genarch.models.InstanceModelHelper.feature(java.lang.Object,java.lang.Object);
+	
+ArchitectureContainer container(Object name,Object model) :
+	JAVA br.pucrio.inf.les.genarch.models.InstanceModelHelper.container(java.lang.Object,java.lang.Object);
+	
+ArchitectureEntity element(Object name,Object model) : 
+	JAVA  br.pucrio.inf.les.genarch.models.InstanceModelHelper.element(java.lang.Object,java.lang.Object);
+	
+ArchitectureEntity fragment(Object name,Object model) : 
+	JAVA  br.pucrio.inf.les.genarch.models.InstanceModelHelper.fragment(java.lang.Object,java.lang.Object);
+	
+ArchitectureEntity fragmentsContainer(Object name,Object model) : 
+	JAVA  br.pucrio.inf.les.genarch.models.InstanceModelHelper.fragmentsContainer(java.lang.Object,java.lang.Object);
+	
+Object featureConfigurations(Object name,Object model) : 
+	JAVA  br.pucrio.inf.les.genarch.models.InstanceModelHelper.featureConfigurations(java.lang.Object,java.lang.Object);
