@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/br.pucrio.inf.les.genarch/src-br.pucrio.inf.les.genarch"
+    editDirectory="/br.pucrio.inf.les.genarch/src-br.pucrio.inf.les.genarch" editorDirectory="/br.pucrio.inf.les.genarch/src-br.pucrio.inf.les.genarch"
+    modelPluginID="br.pucrio.inf.les.genarch" modelName="FeatureMetaModel" testsDirectory="/br.pucrio.inf.les.genarch/src-br.pucrio.inf.les.genarch"
+    importerID="org.eclipse.emf.importer.ecore">
+  <foreignModel>FeatureMetaModel.ecore</foreignModel>
+  <genPackages prefix="Feature" basePackage="br.pucrio.inf.les.genarch.models" disposableProviderFactory="true"
+      ecorePackage="FeatureMetaModel.ecore#/">
+    <genClasses ecoreClass="FeatureMetaModel.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureMetaModel.ecore#//Feature/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureMetaModel.ecore#//Feature/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureMetaModel.ecore#//Feature/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureMetaModel.ecore#//Feature/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureMetaModel.ecore#//Feature/isSelected"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FeatureMetaModel.ecore#//Feature/features"/>
+    </genClasses>
+    <genClasses ecoreClass="FeatureMetaModel.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FeatureMetaModel.ecore#//Model/features"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
