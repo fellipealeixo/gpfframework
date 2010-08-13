@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root-container name="OpenUP-Inception Phase" width="1051" height="618">
+  <node name="Initiate Project" x="19" y="13" width="132" height="36">
+    <edge>
+      <label x="8" y="-31"/>
+    </edge>
+  </node>
+  <node name="Plan Project" x="20" y="126" width="132" height="36">
+    <edge>
+      <label x="-93" y="-1"/>
+    </edge>
+  </node>
+  <node name="Identify a cohesive team" x="381" y="12" width="211" height="36">
+    <edge>
+      <label x="25" y="1"/>
+    </edge>
+  </node>
+  <node name="Estimate project size" x="21" y="186" width="248" height="36">
+    <edge>
+      <label x="5" y="-10"/>
+    </edge>
+  </node>
+  <node name="Evaluate risks" x="77" y="340" width="132" height="36">
+    <edge>
+      <label x="-54" y="11"/>
+    </edge>
+  </node>
+  <node name="Forecast project velocity and duration" x="375" y="261" width="313" height="36">
+    <edge>
+      <label x="-213" y="-1"/>
+    </edge>
+  </node>
+  <node name="Outline project lifecycle" x="622" y="49" width="343" height="36">
+    <edge>
+      <label x="-78" y="-35"/>
+    </edge>
+  </node>
+  <node name="Establish costs and articulate value" x="768" y="219" width="256" height="36">
+    <edge>
+      <label x="-25" y="28"/>
+    </edge>
+  </node>
+  <node name="Plan_deployment" x="351" y="376" width="279" height="36">
+    <edge>
+      <label x="5" y="-10"/>
+    </edge>
+  </node>
+  <node name="fim" x="667" y="558" width="132" height="36"/>
+</root-container>

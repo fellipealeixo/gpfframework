@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root-container name="TestandoFormulario" width="856" height="366">
+  <node name="inicio" x="15" y="12" width="132" height="36">
+    <edge>
+      <label x="8" y="-32"/>
+    </edge>
+  </node>
+  <node name="realizarTarefa" x="15" y="128" width="132" height="36">
+    <edge>
+      <label x="9" y="-38"/>
+    </edge>
+  </node>
+  <node name="fim" x="14" y="259" width="132" height="36"/>
+</root-container>
