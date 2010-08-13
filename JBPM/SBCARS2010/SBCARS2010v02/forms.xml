@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms>
+	<form task="Plan Project" form="plan project.xhtml"/>
+	<form task="Identify a cohesive team" form="plan_and_manage_iteration.xhtml"/>
+	<form task="Identify a cohesive team" form="Identify a cohesive team.xhtml"/>
+	<form task="Estimate project size" form="Estimate project size.xhtml"/>
+	<form task="Evaluate risks" form="Evaluate risks.xhtml"/>
+	<form task="Forecast project velocity and duration" form="Forecast project velocity and duration.xhtml"/>
+	<form task="Outline project lifecycle" form="Outline project lifecycle.xhtml"/>
+	<form task="Establish costs and articulate value" form="Establish costs and articulate value.xhtml"/>
+	<form task="Plan_deployment" form="Plan_deployment.xhtml"/>
+</forms>

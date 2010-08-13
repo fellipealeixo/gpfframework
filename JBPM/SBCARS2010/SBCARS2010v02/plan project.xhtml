@@ -1,0 +1,82 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:tf="http://jbpm.org/jsf/tf"
+      xmlns:jbpm="http://jbpm.org/jsf">
+<ui:component>
+
+<jbpm:dataform>
+
+  <f:facet name="header">
+    <h:outputText value="Developing the project plan provides an opportunity for the team to agree on project scope, 
+    					 objectives, initial timeframe, and deliverables. It allows the team to begin demonstrating 
+    					 self-organization by defining success criteria and work practices to be used. Collaboration 
+    					 and consensus by all key project participants is the goal, but the role responsible for this
+    					 task must ensure that everybody is committed to the plan."/>
+  </f:facet>
+  
+  <!-- TASKFORM ROWS -->
+  
+  <jbpm:datacell>
+    <f:facet name="header">	  
+      <h:outputText value="Versao"/>
+    </f:facet>
+    <h:inputText value="#{var['Versao']}" />
+  </jbpm:datacell>
+ 
+ 
+  <jbpm:datacell>
+    <f:facet name="header">	  
+      <h:outputText value="Atribuido Para"/>
+    </f:facet>
+    <h:selectOneMenu id="atribuido" value="#{var['atribuido']}">
+    	<f:selectItem id="Analyst" itemLabel="Analyst" itemValue="Analyst" />
+	    <f:selectItem id="Architect" itemLabel="Architect" itemValue="Architect" />
+	    <f:selectItem id="Developer" itemLabel="Developer" itemValue="Developer" />
+	    <f:selectItem id="Stakeholder" itemLabel="Stakeholder" itemValue="Stakeholder" />
+	    <f:selectItem id="Tester" itemLabel="Tester" itemValue="Tester" />
+	</h:selectOneMenu>
+  </jbpm:datacell>
+  
+  <jbpm:datacell>
+    <f:facet name="header">	  
+      <h:outputText value="inicio"/>
+    </f:facet>
+    <h:inputText value="#{var['inicio']}" />
+  </jbpm:datacell>
+  
+  <jbpm:datacell>
+    <f:facet name="header">	  
+      <h:outputText value="Comentario"/>
+    </f:facet>
+    <h:inputTextarea value="#{var['Comentario']}" />
+  </jbpm:datacell>
+  
+  <jbpm:datacell>
+    <f:facet name="header">	  
+      <h:outputText value="Concluido"/>
+    </f:facet>
+    <h:selectOneMenu id="concluido" value="#{var['Concludio']}">
+	  <f:selectItem id="item1" itemLabel="0%" itemValue="0" />
+	  <f:selectItem id="item2" itemLabel="25%" itemValue="25" />
+	  <f:selectItem id="item3" itemLabel="50%" itemValue="50" />
+	  <f:selectItem id="item4" itemLabel="75%" itemValue="75" />
+	  <f:selectItem id="item5" itemLabel="100%" itemValue="100" />
+	</h:selectOneMenu>
+  </jbpm:datacell>
+ 
+  <jbpm:datacell>
+    <!-- TASKFORM BUTTONS -->
+    <tf:saveButton value="Salvar"/>
+	<tf:cancelButton value="Cancelar"/>
+	<tf:transitionButton value="Salvar e Fechar"/>
+  </jbpm:datacell>
+  
+</jbpm:dataform>
+</ui:component>
+</html>

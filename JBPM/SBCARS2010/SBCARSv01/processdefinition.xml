@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition  xmlns="urn:jbpm.org:jpdl-3.2"  name="TestandoFormulario">
+
+<swimlane name="Inicio">
+	<assignment expression=""></assignment>
+</swimlane>
+
+	<start-state name="inicio">
+		<task name="inicio" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+			<transition name="inicio_to_realizaTarefa" to="realizarTarefa"/>
+	</start-state>
+
+	<task-node name="realizarTarefa">
+		<task name="realizarTarefa" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+			<transition name="realizarTarefa_to_fim" to="fim"/>
+	</task-node>
+
+
+	<end-state name="fim"></end-state>
+
+
+</process-definition>

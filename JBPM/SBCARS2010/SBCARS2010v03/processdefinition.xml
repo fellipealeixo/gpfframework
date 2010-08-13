@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition  xmlns="urn:jbpm.org:jpdl-3.2"  name="OpenUP-Inception Phase">
+
+<swimlane name="Inicio">
+	<assignment expression=""></assignment>
+</swimlane>
+
+	<start-state name="Plan Project">
+		<task name="Plan Project" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		
+		<task name="Plan Project2" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		
+		
+			<transition name="plan_project_to_Identify_a_cohesiveteam" to="fork1"/>
+	</start-state>
+
+	<task-node name="Identify a cohesive team">
+		<task name="Identify a cohesive team" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		
+				<task name="Identify a cohesive team" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		<transition to="join1"></transition>
+	</task-node>
+	
+	<task-node name="Estimate project size">
+		<task name="Estimate project size" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		<transition to="join1"></transition>
+	</task-node>
+
+
+	<task-node name="Evaluate risks">
+		<task name="Evaluate risks" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		<transition to="join1"></transition>
+	</task-node>
+	
+	
+	<task-node name="Forecast project velocity and duration">
+		<task name="Forecast project velocity and duration" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		<transition to="join1"></transition>
+	</task-node>
+
+
+	<task-node name="Outline project lifecycle">
+		<task name="Outline project lifecycle" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		<transition to="join1"></transition>
+	</task-node>
+
+	<task-node name="Establish costs and articulate value">
+		<task name="Establish costs and articulate value" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		<transition to="join1"></transition>
+	</task-node>
+	
+	
+	<task-node name="Plan_deployment">
+		<task name="Plan_deployment" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		<transition to="join1"></transition>
+	</task-node>
+
+	<fork name="fork1">
+		<transition to="Identify a cohesive team"></transition>
+		<transition to="Estimate project size" name="Identify_a_cohesive_team_to_Estimate_project_size"></transition>
+		<transition to="Evaluate risks" name="Estimate_project_size_to_"></transition>
+		<transition to="Forecast project velocity and duration" name="Evaluate_risks_to_fim"></transition>
+		<transition to="Outline project lifecycle" name="Forecast_project_velocity_and_duration_to_Outline_project_lifecycle"></transition>
+		<transition to="Establish costs and articulate value" name="Outline_project_lifecycle_to_Plan_deployment"></transition>
+		<transition to="Plan_deployment" name="Establish_costs_and_articulate_value_to_Plan_deployment"></transition>
+	</fork>
+
+	<join name="join1">
+		<transition to="fim" name="Plan_deployment_to_fim"></transition>
+	</join>
+
+	
+
+	<end-state name="fim"></end-state>
+
+
+</process-definition>

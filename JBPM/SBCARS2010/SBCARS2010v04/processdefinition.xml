@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition  xmlns="urn:jbpm.org:jpdl-3.2"  name="OpenUP-Inception Phase">
+
+<swimlane name="Gerente">
+	<assignment expression=""></assignment>
+</swimlane>
+
+	<start-state name="Initiate Project">
+		 <task name="Initiate Project" swimlane="Inicio">
+		 	<controller> 
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		<transition to="Plan Project"></transition>
+	</start-state>
+
+
+	<task-node name="Plan Project">
+		<transition to="Plan and Manage Iteration"></transition>
+	</task-node>
+
+	<task-node name="Plan and Manage Iteration">
+		<transition to="Plan Iteration"></transition>
+	</task-node>
+
+	<task-node name="Plan Iteration">
+		<transition to="Manage Iteration"></transition>
+	</task-node>
+
+	<task-node name="Manage Iteration">
+		<transition to="Assess Results"></transition>
+	</task-node>
+
+	<task-node name="Assess Results">
+		<transition to="end-state1"></transition>
+	</task-node>
+
+
+	<end-state name="end-state1"></end-state>
+
+</process-definition>

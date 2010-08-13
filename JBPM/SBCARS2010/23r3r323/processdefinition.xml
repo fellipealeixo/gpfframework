@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition xmlns="urn:jbpm.org:jpdl-3.2"  name="Inception Iteration">
+  
+  <start-state>
+    <transition to="Initiate Project" />
+  </start-state>
+  
+  <process-state name="Initiate Project">
+    	<sub-process name="Plan Project" />    	    	
+    	<transition to="Identify a cohesive team"/>
+  </process-state>
+  
+  
+  <task-node name="Identify a cohesive team">
+		<task name="Identify a cohesive team" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		
+				<task name="Identify a cohesive team" swimlane="Inicio">
+			<controller>			
+				<variable  name="comentario" access="read,write,required"/>
+			</controller>
+		</task>
+		
+		
+		
+			<transition name="Identify_a_cohesive_team_to_Estimate_project_size" to="Estimate project size"/>
+	</task-node>
+  
+</process-definition>
